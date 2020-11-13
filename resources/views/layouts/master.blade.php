@@ -12,11 +12,11 @@
     <div class="jumbotron text-center">
         <h1>@yield('header')</h1>
     </div>
-    <div class="container text-center">
+    <div class="container text-center" style="margin-bottom: 200px">
         @yield('content')
     </div>
 
-    <footer class="footer" style="position: relative; bottom: 0px; padding: 50px; background-color: #e9ecef; width: 100%;">
+    <footer class="footer" style="position: fixed; left: 0; bottom: 0; padding: 50px; background-color: #e9ecef; width: 100%;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-11">

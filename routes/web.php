@@ -18,8 +18,8 @@ Route::get('/', function() {
     return view('bio.form');
 });
 
-Route::get('/hola', function() {
-    return view('hola');
+Route::get('/error', function() {
+    return view('bio.error');
 });
 
 Route::post('/biorritme', [CalculBio::class, "calcularBiorritme"]);
