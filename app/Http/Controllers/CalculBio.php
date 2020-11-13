@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Components\jpgraph\src;
 use DateTime;
 
 class CalculBio extends Controller
@@ -30,16 +29,33 @@ class CalculBio extends Controller
         $ciclesEmotiu = $diesDiferencia / 28;
         $ciclesIntelectual = $diesDiferencia / 33;
 
-        // Es calculen els radians de cada cicle
-        $radiansFisics = $ciclesFisic * 2 * \pi();
-        $radiansEmotiu = $ciclesEmotiu * 2 * \pi();
-        $radiansIntelectual = $ciclesIntelectual * 2 * \pi();
+        $resultatFisic = \sin($ciclesFisic * 2 * \pi());
+        $resultatEmotiu = \sin($ciclesEmotiu * 2 * \pi());
+        $resultatIntelectual = \sin($ciclesIntelectual * 2 * \pi());
 
-        // Es calcula el sinus de cada radiant i s'emmagatzemen els resultats
-        $resultatFisic = \sin($radiansFisics);
-        $resultatEmotiu = \sin($radiansEmotiu);
-        $resultatIntelectual = \sin($radiansIntelectual);
+        $resultatsEixX = array();
+        $resultatsFisicEixY = array();
+        $resultatsEmotiuEixY = array();
+        $resultatsIntelectualEixY = array();
 
-        return \view("bio.result", ["nomUsuari" => $nomUsuari, "dataNaixement" => $dataNaixement, "resultatFisic" => $resultatFisic, "resultatEmotiu" => $resultatEmotiu, "resultatIntelectual" => $resultatIntelectual]);
+        for ($index = -15; $index <= 15; $index++) {
+            $resultatEixX = \date("d-m-Y", \strtotime(\date('Y/m/d') . "+" . $index . " days"));
+            $resultatFisicX = \sin((($diesDiferencia + $index) / 23) * 2 * \pi());
+            $resultatEmotiuX = \sin((($diesDiferencia + $index) / 28) * 2 * \pi());
+            $resultatIntelectualX = \sin((($diesDiferencia + $index) / 33) * 2 * \pi());
+
+            array_push($resultatsEixX, $resultatEixX);
+            array_push($resultatsFisicEixY, $resultatFisicX);
+            array_push($resultatsEmotiuEixY, $resultatEmotiuX);
+            array_push($resultatsIntelectualEixY, $resultatIntelectualX);
+        }
+
+        $dataActual = \date('d/m/Y');
+
+        return \view("bio.result", ["nomUsuari" => $nomUsuari, "dataNaixement" => $dataNaixement, "resultatFisic" => $resultatFisic, 
+                                    "resultatEmotiu" => $resultatEmotiu, "resultatIntelectual" => $resultatIntelectual,
+                                    "resultatsEixX" => $resultatsEixX, "resultatsFisicEixY" => $resultatsFisicEixY,
+                                    "resultatsEmotiuEixY" => $resultatsEmotiuEixY, "resultatsIntelectualEixY" => $resultatsIntelectualEixY,
+                                    "dataActual" => $dataActual]);
     }
 }

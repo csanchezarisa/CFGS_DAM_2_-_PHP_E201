@@ -16,7 +16,7 @@
         @yield('content')
     </div>
 
-    <footer class="footer" style="position: absolute; bottom: 0px; padding: 50px; background-color: #e9ecef; width: 100%;">
+    <footer class="footer" style="position: relative; bottom: 0px; padding: 50px; background-color: #e9ecef; width: 100%;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-11">
