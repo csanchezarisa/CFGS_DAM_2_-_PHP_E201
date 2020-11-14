@@ -17,6 +17,12 @@ class CalculBio extends Controller
             // Es recuperen el nom d'usuari i la data de naixement que ha enviat l'usuari per formulari
             $nomUsuari = $request->input("nomusuari");
             $dataNaixement = $request->input("datanaixement");
+            
+
+            // Revisa si les dades enviades
+            if (strlen($nomUsuari) == 0 || strlen($dataNaixement) == 0) {
+                throw new \Exception("Error dades incompletes");
+            }
 
             // La data de naixement es passa a tipus DateTime, i també es recupera la data actual
             $dataInicial = new DateTime($dataNaixement);
