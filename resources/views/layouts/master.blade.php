@@ -6,6 +6,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    <!-- Foto d'icona del gran i maravellos Jordi -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/proxy/IdmuxWSpoQQqLat6ZCqb2GpBbx0gvT71spPZnZb0Iy9kTuy2mbAj5tsx2CLIyjM0MrpTHWles-NayZJ9A0Ix58mUnl5HEWO26FKT1vR38SwZ1PgBNB4" type="image/x-icon"> 
+
     <title>@yield('title')</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -18,7 +21,6 @@
     <div class="container text-center" style="margin-bottom: 200px">
         @yield('content')
     </div>
-
     <footer class="footer" style="position: fixed; left: 0; bottom: 0; padding: 50px; background-color: #e9ecef; width: 100%;">
       <div class="container-fluid">
         <div class="row">
