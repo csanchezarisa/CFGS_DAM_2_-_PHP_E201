@@ -20,7 +20,7 @@
             <div class="col-sm-9">
                 <div class="progress" style="height:20px;">
                     <div class="progress-bar bg-danger" style="height:20px; width: {{($resultatFisic + 1) * 100 / 2}}%;" data-toggle="tooltip" title="{{($resultatFisic + 1) * 100 / 2}}%">
-                        <strong>{{$resultatFisic * 100}}%</strong>
+                        <strong>{{($resultatFisic + 1) * 100 / 2}}%</strong>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="col-sm-9">
                 <div class="progress" style="height:20px;">
                     <div class="progress-bar bg-success" style="height:20px; width: {{($resultatEmotiu + 1) * 100 / 2}}%;" data-toggle="tooltip" title="{{($resultatEmotiu + 1) * 100 / 2}}%">
-                        <strong>{{$resultatEmotiu * 100}}%</strong>
+                        <strong>{{($resultatEmotiu + 1) * 100 / 2}}%</strong>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="col-sm-9">
                 <div class="progress" style="height:20px;">
                     <div class="progress-bar" style="height:20px; width: {{($resultatIntelectual + 1) * 100 / 2}}%;" data-toggle="tooltip" title="{{($resultatIntelectual + 1) * 100 / 2}}%">
-                        <strong>{{$resultatIntelectual * 100}}%</strong>
+                        <strong>{{($resultatIntelectual + 1) * 100 / 2}}%</strong>
                     </div>
                 </div>
             </div>
