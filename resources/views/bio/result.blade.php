@@ -19,7 +19,7 @@
             </div>
             <div class="col-sm-9">
                 <div class="progress" style="height:20px;">
-                    <div class="progress-bar bg-danger" style="height:20px; width: {{$resultatFisic * 100}}%;">
+                    <div class="progress-bar bg-danger" style="height:20px; width: {{($resultatFisic + 1) * 100 / 2}}%;" data-toggle="tooltip" title="{{($resultatFisic + 1) * 100 / 2}}%">
                         <strong>{{$resultatFisic * 100}}%</strong>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-9">
                 <div class="progress" style="height:20px;">
-                    <div class="progress-bar bg-success" style="height:20px; width: {{$resultatEmotiu * 100}}%;">
+                    <div class="progress-bar bg-success" style="height:20px; width: {{($resultatEmotiu + 1) * 100 / 2}}%;" data-toggle="tooltip" title="{{($resultatEmotiu + 1) * 100 / 2}}%">
                         <strong>{{$resultatEmotiu * 100}}%</strong>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-sm-9">
                 <div class="progress" style="height:20px;">
-                    <div class="progress-bar" style="height:20px; width: {{$resultatIntelectual * 100}}%;">
+                    <div class="progress-bar" style="height:20px; width: {{($resultatIntelectual + 1) * 100 / 2}}%;" data-toggle="tooltip" title="{{($resultatIntelectual + 1) * 100 / 2}}%">
                         <strong>{{$resultatIntelectual * 100}}%</strong>
                     </div>
                 </div>
@@ -123,4 +123,10 @@
 
     Plotly.newPlot('grafica', data, layout);
     </script>
+    <script>
+        // S'encarrega d'executar i obrir els tooltip de les barres de progés
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+        });
+        </script>
 @endsection
