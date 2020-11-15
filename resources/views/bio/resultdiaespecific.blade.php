@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <h2>Avui, dia: {{$dataActual}}</h2>
+    <h2>El dia: {{$dataActual}}</h2>
     <h3>Els teus resultats són:</h3>
     <div class="container" style="margin-top: 50px;">
         <div class="row">
@@ -60,7 +60,9 @@
             @csrf
             <label style="width: 25%;">
                 <strong>Dia desitjat:</strong>
+                <!-- Input de tipus data per introduir la data desitjada per analitzar. Aquesta data no pot tenir un valor inferior al de la data de naixement -->
                 <input type="date" name="datadesitjada" id="datadesitjada" class="form-control" min="{{$dataNaixementSenseTransformar}}"/>
+                <!-- Inputs que tindran els valors del nom d'usuari i de la data de naixement que s'omplaran automàticament i seran invisibles per l'usuari -->
                 <input type="text" name="nomusuari" id="nomusuari" value="{{$nomUsuari}}" style="display: none;"/>
                 <input type="date" name="datanaixement" id="datanaixement" value="{{$dataNaixementSenseTransformar}}" style="display: none;" />
             </label>

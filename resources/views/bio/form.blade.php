@@ -52,7 +52,7 @@
         var inputDate = document.getElementById("datanaixement");
         var diaActual = new Date();
         var dd = String(diaActual.getDate()).padStart(2, '0');
-        var mm = String(diaActual.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var mm = String(diaActual.getMonth() + 1).padStart(2, '0');
         var yyyy = diaActual.getFullYear();
 
         diaActual = yyyy + "-" + mm + "-" + dd;

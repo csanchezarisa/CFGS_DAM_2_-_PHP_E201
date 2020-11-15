@@ -23,3 +23,5 @@ Route::get('/error', function() {
 });
 
 Route::post('/biorritme', [CalculBio::class, "calcularBiorritme"]);
+
+Route::post('/biorritme_dia_especific', [CalculBio::class, 'calcularBiorritmeDiaEspecific']);
